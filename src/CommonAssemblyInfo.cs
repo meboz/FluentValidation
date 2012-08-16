@@ -29,6 +29,3 @@ using System.Security;
 [assembly : AssemblyVersion("3.3.1.0")]
 [assembly : AssemblyFileVersion("3.3.1.0")]
 [assembly: CLSCompliant(true)]
-#if !SILVERLIGHT
-[assembly: AllowPartiallyTrustedCallers]
-#endif

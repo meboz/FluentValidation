@@ -25,21 +25,22 @@ namespace FluentValidation.Results {
 	[Serializable]
 #endif
 	public class ValidationResult {
-		private readonly List<ValidationFailure> errors = new List<ValidationFailure>();
+		public List<ValidationFailure> Errors { get; set; } 
 
 		public virtual bool IsValid {
 			get { return Errors.Count == 0; }
 		}
 
-		public IList<ValidationFailure> Errors {
-			get { return errors; }
-		}
+		//public IList<ValidationFailure> Errors {
+		//    get { return errors; }
+		//}
 
 		public ValidationResult() {
+			Errors = new List<ValidationFailure>();
 		}
 
-		public ValidationResult(IEnumerable<ValidationFailure> failures) {
-			errors.AddRange(failures.Where(failure => failure != null));
+		public ValidationResult(IEnumerable<ValidationFailure> failures) : this() {
+			Errors.AddRange(failures.Where(failure => failure != null));
 		}
 	}
 }

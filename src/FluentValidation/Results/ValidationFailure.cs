@@ -23,7 +23,7 @@ namespace FluentValidation.Results {
 	[Serializable]
 #endif
 	public class ValidationFailure {
-		private ValidationFailure() {
+		public ValidationFailure() {
 			
 		}
 
@@ -45,17 +45,17 @@ namespace FluentValidation.Results {
 		/// <summary>
 		/// The name of the property.
 		/// </summary>
-		public string PropertyName { get; private set; }
+		public string PropertyName { get; set; }
 		
 		/// <summary>
 		/// The error message
 		/// </summary>
-		public string ErrorMessage { get; private set; }
+		public string ErrorMessage { get; set; }
 		
 		/// <summary>
 		/// The property value that caused the failure.
 		/// </summary>
-		public object AttemptedValue { get; private set; }
+		public object AttemptedValue { get; set; }
 		
 		/// <summary>
 		/// Custom state associated with the failure.

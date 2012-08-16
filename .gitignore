@@ -13,3 +13,5 @@ TestResult.xml
 *.orig
 .hg/
 .hgignore
+
+*.ncrunch*
